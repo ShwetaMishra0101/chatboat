@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style></style>
+
+<body>
+    <input type="text" name="" id="input" placeholder="type somthing...">
+    <div id="result" class="result"></div>
+</body>
+
+</html>
+
+<script>
+    const input = document.getElementById("input");
+    const result = document.getElementById("result");
+    input.addEventListener("input", () => {
+        const value = input.value;
+        const num = Number(value);
+        const isType = !!num
+
+        result.innerHTML = `
+          <strong>Input:</strong>"${value}"<br>
+          <strong>Number:</strong>"${num}"<br>
+          <strong>Number type :</strong>"${isType} ${isType ? "truthy (valid Number) " : "(falsy (Invalid or Zero))"}"<br>
+        `
+    })
+</script>

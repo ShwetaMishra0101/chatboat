@@ -1,0 +1,31 @@
+chat 
+
+user {
+    _id
+    name 
+    email
+    password
+    company 
+    address
+  
+}
+
+
+chat{
+    userId:
+    chatHistory:[
+        {
+            type: user
+            message: string
+            time:date
+        },
+        {
+            type: system
+            message: string
+            time: date
+        }
+    ]
+}
+ 
+
+for the login use the cokkies

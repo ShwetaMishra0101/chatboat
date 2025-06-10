@@ -1,0 +1,19 @@
+ 1. userSchema.pre("save", async function (next) { ... })
+
+✅ What it does:
+This is a Mongoose "pre-save" hook. It runs before saving a user document to the database.
+
+✅ Purpose:
+It hashes the user's password before saving it, so you don't store plaintext passwords in your database.
+
+
+2. userSchema.methods.matchPassword = async function (password: string) { ... }
+✅ What it does:
+This is a custom method added to the schema. It allows you to compare a plain password input (e.g. from login) with the hashed password stored in the database.
+
+password: the plain text password entered by the user during login.
+
+this.password: the hashed password stored in MongoDB.
+
+bcrypt.compare: checks if the plain password matches the hashed one.
+
