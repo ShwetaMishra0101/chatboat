@@ -6,10 +6,9 @@ import { connectDB } from "./db";
 
 const app = express();
 
-// Allow the frontend origin(s). Set CLIENT_URL (comma-separated for multiple)
-// in production; defaults to reflecting any origin (fine for Bearer-token auth).
-const origins = process.env.CLIENT_URL?.split(",").map((s) => s.trim());
-app.use(cors({ origin: origins && origins.length ? origins : true }));
+// Allow all origins. Safe here because auth uses Bearer tokens in the
+// Authorization header (not cookies), so no credentials are shared cross-site.
+app.use(cors());
 app.use(express.json());
 
 // Health check — works even if the DB is down, so it confirms the function runs.
