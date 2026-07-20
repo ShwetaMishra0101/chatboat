@@ -4,8 +4,8 @@ services:
     runtime: node
     rootDir: backend
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: bun install
+    startCommand: bun index.ts
     envVars:
       - key: MONGODB_URI
         sync: false
