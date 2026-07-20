@@ -1,7 +1,12 @@
 // Base URL of the backend API.
-// In production set VITE_API_URL (e.g. https://chatboat-api.vercel.app/api) in
-// the Vercel dashboard. Locally it falls back to the dev server on port 5050.
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5050/api";
+// - Local dev (bun run dev)  -> http://localhost:5050/api
+// - Production build (Vercel) -> the deployed Render backend
+// You can still override either with the VITE_API_URL env var.
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD
+    ? "https://chatboat-jdoh.onrender.com/api"
+    : "http://localhost:5050/api");
 
 // Full-page redirect entry points for OAuth (must be a browser navigation).
 export const GOOGLE_AUTH_URL = `${API_URL}/auth/google`;
