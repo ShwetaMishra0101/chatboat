@@ -116,7 +116,6 @@ web_modules/
 out
 
 # Nuxt.js build / generate output
-
 .nuxt
 dist
 
@@ -173,3 +172,4 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
+.vercel

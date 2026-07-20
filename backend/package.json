@@ -8,6 +8,7 @@
     "dev": "bun --watch index.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.112.3",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",

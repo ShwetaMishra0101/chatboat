@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Theme system.
+   Every color in the app reads from these CSS variables, so
+   switching the `data-theme` attribute on <html> re-themes
+   the whole UI (background + accent + surfaces).
+---------------------------------------------------------------- */
+:root,
+[data-theme="light"] {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --border: #ececf0;
+  --input-bg: #f7f7f9;
+  --accent: #dc2f3c;
+  --accent-hover: #c11f2c;
+  --on-accent: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --border: #2a2e3a;
+  --input-bg: #242833;
+  --accent: #dc2f3c;
+  --accent-hover: #e0454f;
+  --on-accent: #ffffff;
+}
+
+[data-theme="ocean"] {
+  --bg: #eef2f9;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --input-bg: #f1f5f9;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --on-accent: #ffffff;
+}
+
+[data-theme="emerald"] {
+  --bg: #eef6f2;
+  --surface: #ffffff;
+  --text: #0f2417;
+  --muted: #5b7065;
+  --border: #dcece3;
+  --input-bg: #f0f7f3;
+  --accent: #059669;
+  --accent-hover: #047857;
+  --on-accent: #ffffff;
+}
+
+[data-theme="purple"] {
+  --bg: #f3f2fb;
+  --surface: #ffffff;
+  --text: #1a1a2e;
+  --muted: #6b7280;
+  --border: #ececf5;
+  --input-bg: #f6f5fc;
+  --accent: #6a5cff;
+  --accent-hover: #5849e0;
+  --on-accent: #ffffff;
+}
+
+[data-theme="midnight"] {
+  --bg: #0f0d1a;
+  --surface: #1a1726;
+  --text: #f3f4f6;
+  --muted: #a1a1b5;
+  --border: #2c2740;
+  --input-bg: #221d33;
+  --accent: #8b5cf6;
+  --accent-hover: #7c3aed;
+  --on-accent: #ffffff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}

@@ -21,14 +21,17 @@
 // }
 
 
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import { User } from "../models/user.model";
+import { User } from "../Models/user.model";
 
-export const protect = async (req: Request, res: Response, next: NextFunction) => {
+export const protect = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const token = req.headers.authorization?.split(" ")[1];
 
-  if (!token) return res.status(401).json({ message: "Not authorized, no token" });
+  if (!token) {
+    res.status(401).json({ message: "Not authorized, no token" });
+    return;
+  }
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: string };
